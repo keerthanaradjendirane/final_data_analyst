@@ -4,5 +4,5 @@ seaborn
 matplotlib
 scikit-learn
 python-docx
-google-generative-ai
+google-generativeai
 pymongo
