@@ -529,14 +529,6 @@ if "data" in st.session_state and menu == "Dashboard":
                 sns.boxplot(x=data[x_col], y=data[y_col], ax=axes[idx])
             elif visualization_type == "Violin Plot":
                 sns.violinplot(x=data[x_col], y=data[y_col], ax=axes[idx])
-            elif visualization_type == "Pair Plot":
-                sns.pairplot(data, ax=axes[idx])  # If you want pairplot in the dashboard
-            elif visualization_type == "Correlation Heatmap":
-                corr_matrix = data.corr()
-                sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', ax=axes[idx])
-            elif visualization_type == "FacetGrid":
-                facet = sns.FacetGrid(data, col=y_col, row=x_col)
-                facet.map(sns.scatterplot, x_col, y_col)
 
             axes[idx].set_title(f"{visualization_type}: {y_col} vs {x_col}")
             axes[idx].set_xlabel(x_col)
